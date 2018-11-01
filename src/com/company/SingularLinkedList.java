@@ -8,12 +8,11 @@ public class SingularLinkedList {
 
     public void addFirst(int data){    //'start' node will be changed and moved forward by invoking any .addFirst(data)
         Node newNode = new Node();
+        newNode.Data = data;
         if(start == null){
-            newNode.Data = data;
             newNode.next = null;
             start = newNode;
         }else {
-            newNode.Data = data;
             newNode.next = start;
             start = newNode;
         }
@@ -32,13 +31,13 @@ public class SingularLinkedList {
 
     public void addLast(int data){
         Node newNode = new Node();
+        newNode.Data = data;
+
         if(start == null){
-            newNode.Data = data;
             newNode.next = null;
             start = newNode;
         }else {
             Node currentNode = start;
-            newNode.Data = data;
             while (currentNode.next != null){   //it will move forward one step before it reached 'null'
                 currentNode = currentNode.next;
             }
