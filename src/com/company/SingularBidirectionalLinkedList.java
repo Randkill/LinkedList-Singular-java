@@ -67,6 +67,18 @@ public class SingularBidirectionalLinkedList {
         }
     }
 
+    public int listLenght(){       //returns lenght of the list
+        int counter = 0;
+        Node currentNode = start;
+        while (currentNode.next != null)
+        {
+            counter++;
+            currentNode = currentNode.next;
+        }
+        counter++;
+        return counter;
+    }
+
     public void printList(){      //displaying our chain
         Node currentNode = start;
         while (currentNode.next != null){
