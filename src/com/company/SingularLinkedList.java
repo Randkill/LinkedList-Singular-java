@@ -63,10 +63,11 @@ public class SingularLinkedList {
 
     public int listLenght(){       //returns lenght of the list
         int counter = 0;
-        while (start.next != null)
+        Node currentNode = start;
+        while (currentNode.next != null)
         {
             counter++;
-            start = start.next;
+            currentNode = currentNode.next;
         }
         counter++;
         return counter;
