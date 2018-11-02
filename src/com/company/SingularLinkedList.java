@@ -9,20 +9,20 @@ public class SingularLinkedList {
     public void addFirst(int data){    //'start' node will be changed and moved forward by invoking any .addFirst(data)
         Node newNode = new Node();
         newNode.Data = data;
-        if(start == null){
+        if(start == null){      //if our chain is Empty
             newNode.next = null;
             start = newNode;
-        }else {
+        }else {                 //if our chain is not Empty
             newNode.next = start;
             start = newNode;
         }
     }
 
     public int deleteFirst(){
-        if(start == null){
-            return -1;
-        }else {
-            Node currentNode;
+        if(start == null){          //if our chain is Empty , it will
+            return -1;              //return a specific number as a symbol
+        }else {                     //if our chain is not Empty
+            Node currentNode;       //it will return the first node`s data
             currentNode = start;
             start = start.next;
             return currentNode.Data;
@@ -32,11 +32,10 @@ public class SingularLinkedList {
     public void addLast(int data){
         Node newNode = new Node();
         newNode.Data = data;
-
-        if(start == null){
+        if(start == null){      //if our chain is Empty , first node will be added
             newNode.next = null;
             start = newNode;
-        }else {
+        }else {                 //if our chin is not Empty , a new Node will be added to the tail of our chain
             Node currentNode = start;
             while (currentNode.next != null){   //it will move forward one step before it reached 'null'
                 currentNode = currentNode.next;
@@ -47,13 +46,13 @@ public class SingularLinkedList {
     }
 
     public int deleteLast(){
-        if(start == null){
-            return -1;
-        }else {
+        if(start == null){          //if our chain is Empty , it will
+            return -1;              //return a specific integer as a symbol
+        }else {                     //if our chain is not Empty
             Node currentNode;
             currentNode = start;
-            while (currentNode.next.next != null){
-                currentNode = currentNode.next;
+            while (currentNode.next.next != null){      //traveling chain from start node
+                currentNode = currentNode.next;         //to one node , remaining to the last node of our chain
             }
             Node temp;
             temp = currentNode.next;
